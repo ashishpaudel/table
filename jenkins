@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    stages{
+        stage("Build"){
+            steps{
+                echo "This is Building process."
+                 bat "npm ci"
+                 bat 'npx playwright install --with-deps'
+            }
+        }
+        stage("Test"){
+            steps{
+                     echo "This is Testing process."
+                     bat "npx playwright test tests/table.spec.js"
+                 }
+            }
+            stage("Deploy"){
+                steps{
+                    echo "This is Deploying process."
+                }
+            }
+            stage("Relase"){
+                steps{
+                    echo "This is Releasing process."
+                }
+            }
+            
+    }
+}
