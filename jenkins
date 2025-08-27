@@ -11,7 +11,8 @@ pipeline{
         stage("Test"){
             steps{
                      echo "This is Testing process."
-                     bat "npx playwright test tests/table.spec.js"
+                     bat "npx playwright test"
+                     bat "table.spec.js"
                  }
             }
             stage("Deploy"){
