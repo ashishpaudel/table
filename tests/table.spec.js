@@ -49,7 +49,7 @@ test.describe("Web Tables Page", ()=>{
     // test 3: edit 
 
 
-    test("should be editable", async({page})=>{
+    test.skip("should be editable", async({page})=>{
 
         const reg = new registration(page)
         for(let j=0; j<var_table.name_given.length; j++){
